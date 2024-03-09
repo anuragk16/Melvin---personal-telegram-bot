@@ -15,10 +15,13 @@ token_ : str = "5537989313:AAFnLJMcM9P0DQOuWBzGbDJyNviBjT8Rj6E"
 async def cmd_hack(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
     "Run cmd script"
     if update.effective_user.username == username and update.effective_user.id == 5001467173:
-        pass
+            pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
 
+    await update.effective_message.reply_text("Running google...")    
+    
     await update.effective_message.reply_text("Running CMD hack...")
     
     os.startfile("cmd.exe")
@@ -41,6 +44,7 @@ async def google(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
   
     await update.effective_message.reply_text("Running google...")
     
@@ -57,6 +61,7 @@ async def youtube(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
     
     await update.effective_message.reply_text("Running google...")
     
@@ -74,6 +79,7 @@ async def AWT(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
     
     
     
@@ -86,6 +92,7 @@ async def altab(update:Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
   
     
     
@@ -103,6 +110,7 @@ async def close_sys(update:Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
 
     
     
@@ -120,6 +128,7 @@ async def shutdown(update:Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
  
     await update.effective_message.reply_text("Attempt to shutdown...")
     await update.effective_message.reply_text("system will shutdown after 5 seconds.")
@@ -133,6 +142,7 @@ async def restart(update:Update,context: ContextTypes.DEFAULT_TYPE) -> None:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
 
     
     
