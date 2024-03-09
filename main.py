@@ -16,10 +16,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(update.message.from_user["username"])
     print(update.message.from_user["id"])
     if update.message.from_user["username"] == "Anurag_K1603" and update.message.from_user["id"] == 5001467173:
-        
-
         await update.message.reply_text("Hello friends, This is melvin :>] , programed by anurag kumawat\
-            .Please write /help to see the commands available.")
+            \n.Write /help to see the commands available.")
 
         
     else:
