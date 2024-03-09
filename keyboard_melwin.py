@@ -11,6 +11,7 @@ async def keyboard_mode(update:Update,context: ContextTypes.DEFAULT_TYPE):
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
 
     buttons = [
         KeyboardButton("Ctrl"),
@@ -44,6 +45,7 @@ async def check_chat(update:Update,context: ContextTypes.DEFAULT_TYPE):
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
+        return False
     
     if update.message.text == 'Ctrl': 
         pg.press("ctrl")
