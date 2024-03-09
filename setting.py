@@ -4,13 +4,12 @@ import pyautogui as pg
 import os
 import time
 import webbrowser
-#from functools import wraps
-from telegram.constants import ChatAction
 
 
-username : str = "Anurag_K1603"
-user_id : int = 5001467173
-token_ : str = "5537989313:AAFnLJMcM9P0DQOuWBzGbDJyNviBjT8Rj6E"
+## set these values first
+username : str 
+user_id : int 
+token_ : str 
 
 async def cmd_hack(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
     "Run cmd script"
