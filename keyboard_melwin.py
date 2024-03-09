@@ -2,14 +2,16 @@ from telegram import Update, ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardR
 from telegram.ext import ContextTypes
 import pyautogui as pg
 from webbrowser import open_new_tab
+from setting import username,user_id
+
 
 async def keyboard_mode(update:Update,context: ContextTypes.DEFAULT_TYPE):
-    
-    if update.effective_user.username== "Anurag_K1603" and update.effective_user.id == 5001467173:
+    "Start the Keyboard Mode"
+    if update.effective_user.username== username and update.effective_user.id == user_id:
         pass
     else:
         await update.effective_message.reply_text("Permission denied for you ")
-        return False
+
     buttons = [
         KeyboardButton("Ctrl"),
         KeyboardButton("Alt"),
@@ -35,8 +37,13 @@ async def keyboard_mode(update:Update,context: ContextTypes.DEFAULT_TYPE):
     
     await update.effective_message.reply_text("Keyboard mode ON", reply_markup=keyboard_reply)
    
-    
-async def check_rp(update:Update,context: ContextTypes.DEFAULT_TYPE):
+   
+async def check_chat(update:Update,context: ContextTypes.DEFAULT_TYPE):
+    "Reply to specific chat which include the specific string or sub-string"
+    if update.effective_user.username== username and update.effective_user.id == user_id:
+        pass
+    else:
+        await update.effective_message.reply_text("Permission denied for you ")
     
     if update.message.text == 'Ctrl': 
         pg.press("ctrl")
@@ -91,7 +98,6 @@ async def check_rp(update:Update,context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("done")
     
     elif update.message.text == 'Exit':
-        
         await update.message.reply_text("Exit keyboard mode!!", reply_markup=ReplyKeyboardRemove())
 
 
@@ -116,8 +122,7 @@ async def check_rp(update:Update,context: ContextTypes.DEFAULT_TYPE):
         pg.typewrite(text)
         await update.message.reply_text("done")
 
-
+    """
     else: 
-        
         await update.message.reply_text(f"Your message is: {update.message.text}") 
-    
+    """
