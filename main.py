@@ -9,9 +9,7 @@ from time import sleep
 # Enable logging
 logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s", level=logging.INFO
-)
-
-
+)           
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     "Start a bot"
