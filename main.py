@@ -2,9 +2,8 @@
 import logging
 from telegram import Update , InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, ContextTypes, CallbackQueryHandler, MessageHandler, filters
-from setting import  cmd_hack, google, youtube, close_sys, AWT, altab, shutdown, restart, sleep  #send_typing_action
-from keyboard_melwin import keyboard_mode, check_rp
-import telegram
+from setting import  cmd_hack, google, youtube, close_sys, AWT, altab, shutdown, restart , token_
+from keyboard_melwin import keyboard_mode, check_chat
 from time import sleep
 
 # Enable logging
@@ -13,9 +12,9 @@ logging.basicConfig(
 )
 
 
-#@send_typing_action
+
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-  
+    "Start a bot"
     print(update.message.from_user["username"])
     print(update.message.from_user["id"])
     if update.message.from_user["username"] == "Anurag_K1603" and update.message.from_user["id"] == 5001467173:
@@ -23,19 +22,18 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         await update.message.reply_text("Hello friends, This is melvin :>] , programed by anurag kumawat\
             .Please write /help to see the commands available.")
-        return True
+
         
     else:
         await update.message.reply_text("Hello friends, This is melvin :>] , programed by anurag kumawat\
             .\n YOU ARE NOT AUTHORIZED BY ANURAG TO USE THIS BOT - HAHAHA ")
-        return False
+
     
 
         
 
-#@send_typing_action
 async def help(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
-
+    "Give available commands"
     # Create a list of buttons
     buttons = [
         InlineKeyboardButton("Google", callback_data="google"),
@@ -92,7 +90,7 @@ def main() -> None:
     application.add_handler(CallbackQueryHandler(keyboard_mode, "keyboard_mode"))
     
     
-    application.add_handler(MessageHandler(filters.CHAT, check_rp))
+    application.add_handler(MessageHandler(filters.CHAT, check_chat))
     
     application.run_polling()
     
@@ -101,8 +99,8 @@ def main() -> None:
 
 if __name__ == "__main__":
     
-    
-    application = Application.builder().token("5537989313:AAFnLJMcM9P0DQOuWBzGbDJyNviBjT8Rj6E").build()
+     ## Set your token here
+    application = Application.builder().token(token_).build()
     
     main()
     
