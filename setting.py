@@ -8,9 +8,9 @@ import webbrowser
 
 
 ## set these values first
-username : str 
-user_id : int 
-token_ : str 
+username : str = "Your_username"
+user_id : int = "Your_id"
+token_ : str = "Your_Token"
 
 async def cmd_hack(update: Update,context: ContextTypes.DEFAULT_TYPE) -> None:
     "Run cmd script"
