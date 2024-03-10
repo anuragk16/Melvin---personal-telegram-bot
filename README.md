@@ -73,6 +73,7 @@ This Telegram bot is built using Python-telegram-bot library and enables users t
 5. To search on YouTube, type "YS" followed by the text to be searched.
 6. Enter keyboard mode to use keyboard commands. Use `/exit_keyboard` to exit keyboard mode.
 7. To type on the current window, write "TYPE" followed by the text you want to type. For example, if you want to type "Hello World", send the message "TYPE Hello World". This will type "Hello World" on your PC's current window (If there is typing area).
+8. Note: The `/cmd_hack` command is not harmful; it is just for demonstration purposes. It runs a CMD script as a demonstration and does not perform any harmful actions.
 
 ## Commands
 
